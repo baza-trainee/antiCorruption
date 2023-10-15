@@ -2,8 +2,8 @@ import "./hero.scss";
 
 const Hero = () => {
   return (
-    <section className="hero__container">
-      <div className="hero__tumb">
+    <section className="hero">
+      <div className="hero__container">
         <h2 className="hero__title">
           В цю гру
           <span className="hero__title-unit">грають </span>
