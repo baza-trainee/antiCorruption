@@ -6,7 +6,7 @@ import {
   About,
   Contact,
   Counteract,
-  Home,
+  Hero,
   Partners,
   SliderContainer,
 } from "./components";
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <Home />
+      <Hero />
       <SliderContainer />
       <About />
       <Counteract />
