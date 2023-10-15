@@ -3,9 +3,7 @@
 .hero__container{
     height: 765px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
+    margin: 0 auto;
     background-image: url(./backgroud-min.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -25,27 +23,20 @@
     width: 100%;
     color: $white;
     text-align: center;
-    padding-top: 180px;
-    padding-bottom: 180px;
-    padding-left: 16px;
-    padding-right:16px;
-    margin-left: auto;
-    margin-right: auto;    
+    padding: 180px 16px;
+    margin: 0 auto;
+   
     @media screen and (min-width:($max-width-mobile)) {
         width: $max-width-mobile;     
     }
     @media screen and (min-width:($max-width-tablet)) {
-        width: $max-width-tablet;        
-        padding-top: 96px;
-        padding-bottom: 96px;
-        padding-left: 32px;
-        padding-right: 32px;
+        width: $max-width-tablet; 
+        padding: 96px 32px;       
     }
     @media screen and (min-width:($max-width-desktop)) {
         width: $max-width-desktop;
-        padding-left: 285px;
-        padding-right: 285px;
-        padding-bottom: 175px;
+        padding: 96px 285px 175px;
+        
     }
 }
 
@@ -54,13 +45,11 @@
     font-size: 60px;        
     font-weight: 400;
     line-height: 1.25;
-    padding-left: 9px;
-    padding-right: 9px;
+    padding: 0 9px;
     margin-bottom: 64px;
     
     @media screen and (min-width:$max-width-mobile) {
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0;
         // text-align: left;
         grid-area: title;
         display: grid;
@@ -115,17 +104,14 @@
     line-height: 1.33;
     letter-spacing: 1px;
     text-align: center;
-       
+
     @media screen and (min-width:($max-width-tablet)) { 
-        padding-left: 65px;
-        padding-right: 65px;
+        padding: 0 65px;
     }
         
     @media screen and (min-width:($max-width-desktop)) {          
     text-align: left;
-    padding-left: 58px;
-    padding-right: 58px;
-        
+    padding: 0 58px;
     }
         
 }
