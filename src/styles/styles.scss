@@ -1,12 +1,8 @@
 @import '_variables.scss';
 @import '_reset.scss';
 @import '_mixin.scss';
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Exo:wght@400;500;600&display=swap');
-
-@font-face {
-  font-family: 'Caveat';
-  src: local('Caveat'), url('../fonts/Caveat-Regular.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 body {
   font-family: $font-secondary;
@@ -16,8 +12,6 @@ body {
 }
 
 .grid-container {
-    max-width: $desktop-width;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat($desktop-columns, 1fr);
     grid-gap: $sm;
@@ -25,13 +19,22 @@ body {
     @media (max-width: $tablet-width) {
       grid-template-columns: repeat($tablet-columns, 1fr);
       grid-gap: $lg;
-      margin: 0 $s;
     }
   
     @media (max-width: $mobile-width) {
       grid-template-columns: repeat($mobile-columns, 1fr);
       grid-gap: $xl-2;
-      margin: 0 $xl-2;
     }
 }
+
+.general-margin {
+  margin: 0 auto;
   
+  @media (max-width: $tablet-width) {
+    margin: 0 $s;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 0 $xl-2;
+  }
+}
