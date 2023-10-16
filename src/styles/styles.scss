@@ -1,0 +1,37 @@
+@import '_variables.scss';
+@import '_reset.scss';
+@import '_mixin.scss';
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Exo:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Caveat';
+  src: local('Caveat'), url('../fonts/Caveat-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: $font-secondary;
+  background-color: $white;
+  color: $text;
+  line-height: 1.5;
+}
+
+.grid-container {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat($desktop-columns, 1fr);
+    grid-gap: $sm;
+  
+    @media (max-width: $tablet-width) {
+      grid-template-columns: repeat($tablet-columns, 1fr);
+      grid-gap: $lg;
+      margin: 0 $s;
+    }
+  
+    @media (max-width: $mobile-width) {
+      grid-template-columns: repeat($mobile-columns, 1fr);
+      grid-gap: $xl-2;
+      margin: 0 $xl-2;
+    }
+}
+  
