@@ -1,4 +1,12 @@
-import "./App.scss";
+import {
+  createBrowserRouter, 
+  createRoutesFromElements,
+  Route, 
+  RouterProvider,
+  Outlet
+} from 'react-router-dom'
+
+import "./app.scss";
 import "./styles/styles.scss";
 import {
   Header,
@@ -9,20 +17,40 @@ import {
   Home,
   Partners,
   SliderContainer,
+  Error404
 } from "./components";
+
+const RootLayout = () => (
+  <>
+    <Header />
+    <Outlet />
+    <Footer />
+  </>
+)
+
+const Main = () => (
+  <>
+  <About />
+  <Contact />
+  <Counteract />
+  <Home />
+  <Partners />
+  <SliderContainer />
+  </>
+)
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Main />} />
+      <Route path="*" element={<Error404 />} />
+    </Route>
+  )
+)
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Home />
-      <SliderContainer />
-      <About />
-      <Counteract />
-      <Contact />
-      <Partners />
-      <Footer />
-    </>
+    <RouterProvider router={router} />
   );
 };
 

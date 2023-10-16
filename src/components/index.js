@@ -8,3 +8,4 @@ export { default as Counteract } from "./Counteract/Counteract";
 export { default as Home } from "./Home/Home";
 export { default as Partners } from "./Partners/Partners";
 export { default as SliderContainer } from "./SliderContainer/SliderContainer";
+export { default as Error404 } from "./Error404/Error404";
