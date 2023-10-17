@@ -1,7 +1,7 @@
 import {
-  createBrowserRouter, 
+  createBrowserRouter,
   createRoutesFromElements,
-  Route, 
+  Route,
   RouterProvider,
   Outlet
 } from 'react-router-dom'
@@ -28,26 +28,26 @@ const RootLayout = () => (
 
 const Main = () => (
   <>
-       {/* <Header />
-        <Hero /> */}
-      <CorruptionContainer />
-      <CounteractContainer />
-      {/* <Footer /> */}
+    <Header />
+    <Hero />
+    <CorruptionContainer />
+    <CounteractContainer />
+    <Footer />
   </>
 )
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<Main />} />
-      <Route path="*" element={<Error />} />
+    <Route path="/" element={ <RootLayout /> }>
+      <Route index element={ <Main /> } />
+      <Route path="*" element={ <Error /> } />
     </Route>
   )
 )
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+    <RouterProvider router={ router } />
   );
 };
 
