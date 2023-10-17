@@ -1,3 +1,4 @@
+ 
 import {
   createBrowserRouter, 
   createRoutesFromElements,
@@ -6,7 +7,7 @@ import {
   Outlet
 } from 'react-router-dom'
 
-import "./app.scss";
+ 
 import "./styles/styles.scss";
 import {
   Header,
@@ -18,6 +19,7 @@ import {
   Partners,
   SliderContainer,
   Error404
+ 
 } from "./components";
 
 const RootLayout = () => (
