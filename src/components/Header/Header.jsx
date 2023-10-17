@@ -1,33 +1,37 @@
 import React from "react";
 import "./header.scss";
+import burgerOpen from "../../assets/header/burger-menu.svg";
 
 const Header = () => {
   return (
-    <div className="grid-container header-container">
+    <div className="header-container">
       <a className="header-container-logo" href="/index.html">
-        <img className="header-container-logo-img" src="./src/components/Header/logo.png" alt="logo" width={87}/>
+        <img
+          className="header-container-logo-img"
+          src="src/assets/header/logo.png"
+          alt="logo"
+          width={88}
+        />
       </a>
-      <div className="header-container-info">
-      <ul className="header-container-info-list">
-        <li className="header-container-info-list-item">
-          <a className="header-container-info-list-item-link" href="/">
-            Це корупція
-          </a>
-        </li>
-        <li className="header-container-info-list-item">
-          <a className="header-container-info-list-item-link" href="/">
-            Як протидіяти корупції
-          </a>
-        </li>
-      </ul>
-      <a className="header-container-info-button" href="/">
+      <div className="header-container-nav">
+        <ul className="header-container-nav-list">
+          <li className="header-container-nav-list-item">
+            <a className="header-container-nav-list-item-link" href="#corruption">
+              Це корупція
+            </a>
+          </li>
+          <li className="header-container-nav-list-item">
+            <a className="header-container-nav-list-item-link" href="#counteract">
+              Як протидіяти корупції
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a className="header-container-button" href="/">
         Підтримати проект
       </a>
-      </div>
-      <img className="header-container-burger" src="./src/components/Header/burger-menu-img.png" width={40} />
-      {/* <svg className="header-burger">
-        <use href="/src/components/Header/burger-menu.svg"></use>
-      </svg> */}
+
+      <img src={burgerOpen} alt="Open" className="header-container-burger" />
     </div>
   );
 };

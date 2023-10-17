@@ -1,28 +1,54 @@
 @import "/src/styles/styles.scss";
-
 .header {
   &-container {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat($mobile-columns, 1fr);
+    grid-gap: $xl-2;
+    padding: 16px;
     align-items: center;
+    @media (min-width: $tablet-width) {
+      padding: 24px 32px;
+      grid-template-columns: repeat($tablet-columns, 1fr);
+      grid-gap: $s;
+    }
+    @media (min-width: $desktop-width) {
+      padding: 8px 150px;
+      grid-template-columns: repeat($desktop-columns, 1fr);
+      grid-gap: $sm;
+    }
     &-logo {
-      display: flex;
-      align-items: center;
-      &-img {
+      justify-self: start;
+      grid-column: 1;
+      width: 88px;
+      height: 40px;
+      @media (min-width: $tablet-width) {
         width: 142px;
+        height: 64px;
+        grid-column: 1 / span 2;
+      }
+      @media (min-width: $desktop-width) {
+      }
+      &-img {
+        @media (min-width: $tablet-width) {
+          width: 142px;
+        }
+        @media (min-width: $desktop-width) {
+        }
       }
     }
-    &-info {
-      display: flex;
-      gap: 50px;
-      display: flex;
-      align-items: center;
+    &-nav {
+      display: none;
+      @media (min-width: $desktop-width) {
+        justify-self: end;
+        display: block;
+        grid-column: 5 / span 5;
+      }
       &-list {
-        display: flex;
-        gap: 40px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 40px;
         &-item {
+          width: auto;
           &-link {
             font-size: $s;
             font-weight: 500;
@@ -30,10 +56,13 @@
           }
         }
       }
-      &-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    }
+    &-button {
+      display: none;
+      @media (min-width: $tablet-width) {
+        display: unset;
+        grid-column: 4 / span 3;
+        justify-self: center;
         font-size: $s;
         font-weight: 400;
         line-height: normal;
@@ -42,58 +71,34 @@
         background-color: $primary-color;
         color: $white;
         border-radius: 5px;
+        padding: 10px 32px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);        
       }
+      @media (min-width: $desktop-width) {
+        grid-column: 10 / span 3;
+        justify-self: end;
+      }
+    }
+    &-button:hover {
+      background-color: var(--secondary, #142d45);
+      box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
+    }
+    &-button:focus {
+      background-color: var(--tertiary, #275a8a);
+      box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
     }
     &-burger {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: $max-width-tablet) {
-  .header {
-    &-container {
-      padding-top: 24px;
-      padding-bottom: 24px;
-      &-logo {
-        &-img {
-          width: 142px;
-        }
+      stroke: #000;
+      fill: #000;
+      width: 40px;
+      height: 40px;
+      justify-self: end;
+      grid-column: 4;
+      @media (min-width: $tablet-width) {
+        grid-column: 8;
       }
-      &-info {
-        &-list {
-          display: none;
-        }
-        &-button {
-        }
-      }
-      &-burger {
-        display: block;
-        //   stroke: #000;
-        //   fill: #000;
-        width: 40px;
-        height: 40px;
-      }
-    }
-  }
-}
-@media (max-width: $max-width-mobile) {
-  .header {
-    &-container {
-      padding-top: 16px;
-      padding-bottom: 16px;
-      &-logo {
-        &-img {
-          width: 88px;
-        }
-      }
-      &-info {
-        &-list {
-          display: none;
-        }
-        &-button {
-          display: none;
-        }
+      @media (min-width: $desktop-width) {
+        display: none;
       }
     }
   }
