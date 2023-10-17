@@ -1,27 +1,22 @@
-import "./App.scss";
-import "./styles/styles.scss";
+import './styles/styles.scss'
+
 import {
   Header,
   Footer,
-  About,
-  Contact,
-  Counteract,
+  CounteractContainer,
   Hero,
-  Partners,
-  SliderContainer,
+  CorruptionContainer,
 } from "./components";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Hero />
-      <SliderContainer />
-      <About />
-      <Counteract />
-      <Contact />
-      <Partners />
-      <Footer />
+        {/* <Header />
+        <Hero />
+        <CorruptionContainer /> */}
+        <CounteractContainer />
+        {/* <Footer /> */}
+
     </>
   );
 };
