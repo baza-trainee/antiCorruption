@@ -18,6 +18,7 @@ import {
   Partners,
   SliderContainer,
   Error404
+
 } from "./components";
 
 const RootLayout = () => (
