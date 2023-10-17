@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+
+
+.corruption-case{
+    padding: 0 $s;
+  
+    @media screen and (min-width: $max-width-tablet) {
+      padding: 0 $lg;
+}
+
+    @media screen and (min-width: $max-width-desktop) {
+      padding: 0 150px;
+    }
+
+    &__title {
+      font-family: Caveat;
+      font-size: 40px;
+      font-weight: 400;
+      text-align: center;
+      color: #000;
+      line-height: normal;
+    
+      @media screen and (min-width: $max-width-tablet) {
+        font-size: 72px;
+        text-align: left;
+      }
+    
+      @media screen and (min-width: 844px) and (orientation:landscape) {
+        font-size: 60px;
+        text-align: center;
+      }
+    
+      @media screen and (min-width: $max-width-desktop) {
+        font-size: 80px;
+        text-align: center;
+      }
+    }
+
+    &__list {
+      @include grid(1fr, $lg);
+      margin-top: $lg;
+    
+      @media screen and (min-width: $max-width-tablet) {
+        @include grid(1fr, 64px);
+        margin-top: 64px;
+      }
+    
+      @media screen and (min-width: 844px) and (orientation:landscape) {
+        @include grid(1fr, $lg);
+        margin-top: $lg;
+      }
+    
+      @media screen and (min-width: $max-width-desktop) {
+        @include grid(1fr, $xl);
+        margin-top: $xl;
+      }
+    }
+}
+
+

@@ -1,0 +1,198 @@
+@import '/src/styles/variables';
+@import'/src/styles/mixin';
+
+
+@mixin text {
+  width: 266px;
+  font-size: $s;
+  font-weight: 500;
+  line-height: normal;
+
+  @media screen and (min-width: $max-width-tablet) {
+    width: $tablet-width;
+    font-size: $md;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  @media screen and (min-width: $max-width-desktop) {
+    width: 825px;
+    font-size: $lg;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.hidden {
+  display: none
+}
+
+.corruption-case__item {
+  position: relative;
+  max-width: 100%;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
+  &--cause {
+    position: absolute;
+    inset: 0px;
+    background-color: $white;
+    pointer-events: none;
+  }
+
+   &--consequences {
+    min-height: 246px;
+    background-color: $white;
+    pointer-events: none;
+  
+    @media screen and (min-width: $max-width-tablet) {
+      min-height: 414px;
+    }
+  }
+
+}
+
+.item--cause{
+
+  &__text-box {
+    height: 63px;
+    @include flex(flex-end, start, row);
+
+    @media screen and (min-width: $max-width-tablet) {
+      height: 80px;
+    }
+
+    @media screen and (min-width:$max-width-desktop) {
+      height: 86px;
+    }
+}
+
+  &__text {
+    @include text;
+}
+
+}
+
+.item--consequences{
+  
+  &__text-box {
+    height: 63px;
+    @include flex(flex-end, end, row);
+
+    @media screen and (min-width: $max-width-tablet) {
+      height: 80px;
+    }
+
+    @media screen and (min-width:$max-width-desktop) {
+      height: 86px;
+    }
+}
+
+  &__text {
+
+    @include text;
+    @include flex(end, end, row);
+    text-align: end;
+  }
+}
+
+.corruption-case{
+  
+  &__image {
+  display: flex;
+  min-width: 100%;
+
+  height: auto;
+  margin-top: 8px;
+  pointer-events: none;
+
+  @media screen and (min-width: $max-width-tablet) {
+    margin-top: 15px;
+
+  }
+
+  @media screen and (min-width:$max-width-desktop) {
+    margin-top: 20px;
+  }
+}
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+
+
+.slider{
+  
+  &__container {
+  position: relative;
+  height: 100%;
+}
+
+  &__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    margin-left: -3px;
+    background-color: rgba(255, 255, 255, 0.8);
+  
+    @media screen and (min-width: $max-width-tablet) {
+      width: 9px;
+      margin-left: -4.5px;
+  
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    bottom: 34%;
+    height: $md;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $md;
+    margin-left: -12px;
+    border-radius: 50px;
+    background-color: #d9d9d9;
+
+    @media screen and (min-width: $max-width-tablet) {
+      bottom: 40%;
+
+    }
+
+    @media screen and (min-width: $max-width-desktop) {
+      height: 40px;
+      width: 40px;
+      margin-left: -20px;
+    }
+  }
+
+  &__icon {
+    height: 12px;
+    width: 12px;
+    pointer-events: none;
+
+    @media screen and (min-width: $max-width-tablet) {
+      height: 14px;
+      width: 14px;
+    }
+
+    @media screen and (min-width: $max-width-desktop) {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+
+
+
+
