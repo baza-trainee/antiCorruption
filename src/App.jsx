@@ -28,11 +28,9 @@ const RootLayout = () => (
 
 const Main = () => (
   <>
-    <Header />
     <Hero />
     <CorruptionContainer />
     <CounteractContainer />
-    <Footer />
   </>
 )
 
