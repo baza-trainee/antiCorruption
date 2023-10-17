@@ -1,3 +1,11 @@
+import {
+  createBrowserRouter, 
+  createRoutesFromElements,
+  Route, 
+  RouterProvider,
+  Outlet
+} from 'react-router-dom'
+
 import './styles/styles.scss';
 
 import {
@@ -6,17 +14,40 @@ import {
   CounteractContainer,
   Hero,
   CorruptionContainer,
+  Error
 } from './components';
 
-const App = () => {
-  return (
-    <>
-      {/* <Header />
+
+const RootLayout = () => (
+  <>
+    <Header />
+    <Outlet />
+    <Footer />
+  </>
+)
+
+const Main = () => (
+  <>
+       {/* <Header />
         <Hero /> */}
       <CorruptionContainer />
       <CounteractContainer />
       {/* <Footer /> */}
-    </>
+  </>
+)
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Main />} />
+      <Route path="*" element={<Error />} />
+    </Route>
+  )
+)
+
+const App = () => {
+  return (
+    <RouterProvider router={router} />
   );
 };
 
