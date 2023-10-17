@@ -1,4 +1,4 @@
-import './styles/styles.scss'
+import './styles/styles.scss';
 
 import {
   Header,
@@ -6,17 +6,16 @@ import {
   CounteractContainer,
   Hero,
   CorruptionContainer,
-} from "./components";
+} from './components';
 
 const App = () => {
   return (
     <>
-        {/* <Header />
-        <Hero />
-        <CorruptionContainer /> */}
-        <CounteractContainer />
-        {/* <Footer /> */}
-
+      {/* <Header />
+        <Hero /> */}
+      <CorruptionContainer />
+      <CounteractContainer />
+      {/* <Footer /> */}
     </>
   );
 };
