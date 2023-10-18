@@ -28,11 +28,9 @@ const Corruption = ({
 
   useEffect(() => {
     if (isMobilePosition) {
-      console.log(0);
       setImageRevealFraq(1);
     } else if (isTabletPosition) {
       setImageRevealFraq(0.984);
-      console.log(1);
     }
   }, [isMobilePosition, isTabletPosition]);
 

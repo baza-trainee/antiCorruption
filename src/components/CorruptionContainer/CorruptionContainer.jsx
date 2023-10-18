@@ -1,6 +1,6 @@
 import './corruptionContainer.scss';
 import Corruption from '../Corruption/Corruption';
-import { corruptionCases } from '../../utils/constants';
+import { corruptionCases } from '../../constants/corruption';
 
 const CorruptionContainer = () => {
   return (
