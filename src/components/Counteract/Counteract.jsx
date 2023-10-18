@@ -14,23 +14,25 @@ const Counteract = ({ questions, activeId, toggleQuestion }) => {
         }`;
         return (
           <article key={id} className="counteract__article">
-            <div className="counteract__number">
-              <img src={img} alt={alt} />
+            <div className="counteract__header">
+              <div className="counteract__number">
+                <img src={img} alt={alt} />
+              </div>
+              <h3 className="counteract__title">{title}</h3>
+              <button
+                className="counteract__btn"
+                onClick={() => toggleQuestion(id)}
+              >
+                {isActive ? (
+                  <img src={Minus} alt="minus" />
+                ) : (
+                  <img src={Plus} alt="plus" />
+                )}
+              </button>
             </div>
-            <h3 className="counteract__title">{title}</h3>
             <div className={innerClass}>
               <p className="counteract__info">{info}</p>
             </div>
-            <button
-              className="counteract__btn"
-              onClick={() => toggleQuestion(id)}
-            >
-              {isActive ? (
-                <img src={Minus} alt="minus" />
-              ) : (
-                <img src={Plus} alt="plus" />
-              )}
-            </button>
           </article>
         );
       })}
