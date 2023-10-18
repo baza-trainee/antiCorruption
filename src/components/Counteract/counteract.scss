@@ -2,7 +2,7 @@
 
 .counteract {
     &__container {
-        padding-bottom: 104px;
+        padding: 80px 0;
         grid-column: span 4;
         @media (min-width: $mobile-width) and (max-width: $tablet-width) {
             grid-column: span 8;
