@@ -1,0 +1,130 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.page404 {
+  height: 764px;
+
+  @media screen and (min-width: $max-width-tablet) { 
+    & {
+      height: 100vh;
+    }
+  }
+
+  &__content {
+    background-image: url('/src/assets/error/backgroud.png');
+    background-size: 200% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include flex(center, center, column);
+    padding: 68.5px 16px; 
+    row-gap: 64px;
+
+    @media screen and (min-width: $max-width-tablet) { 
+      & {
+          background-size: 100% 110%;
+          row-gap: 16px;
+      }
+    }
+  }
+
+  &__image {
+    width: 358px;
+    height: 232px;
+
+    @media screen and (min-width: $max-width-tablet) { 
+      & {
+        width: 431px;
+        height: 230px;
+      }
+    }
+  }
+
+  &__description {
+    width: 330px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $white;
+
+    @media screen and (min-width: $max-width-tablet) { 
+      & {
+        width: 592px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        text-align: left;
+      }
+    }
+
+    @media screen and (min-width: $desktop-width) { 
+      & {
+        width: 897px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: $primary-color;
+    padding: 24px 48px;
+    width: 340px;
+    text-align: center;
+    transition: all 1s;
+
+    &:hover {
+      background-color: $button;
+    }
+
+    @media screen and (min-width: $max-width-tablet) { 
+      & {
+        width: 259px;
+        padding: 16px 32px;
+      }
+    }
+  
+    @media screen and (min-width: $desktop-width) { 
+      & {
+        width: 339px;
+        padding: 24px 32px;
+      }
+    }
+  }
+
+  &__link {
+    color: $white;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: center;
+
+    @media screen and (min-width: $max-width-tablet) { 
+      & {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: center;
+      }
+    }
+  
+    @media screen and (min-width: $desktop-width) { 
+      & {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+a:visited {
+  color: $white;
+}
+
+

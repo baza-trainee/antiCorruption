@@ -12,7 +12,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-spring": "^9.7.3"
+    "react-responsive": "^9.0.2",
+    "react-router-dom": "^6.17.0",
+    "react-spring": "^9.7.3",
+    "vite-plugin-static-copy": "^0.17.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -23,6 +26,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.67.0",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-copy": "^0.1.6"
   }
 }

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./counteractContainer.scss";
-import data from "../../data";
+import { counteract } from "../../constants";
 import Counteract from "../Counteract/Counteract";
 
 const CounteractContainer = () => {
-  const [questions, setQuestions] = useState(data);
+  const [questions, setQuestions] = useState(counteract);
   const [activeId, setActiveId] = useState(null);
 
   const toggleQuestion = (id) => {
