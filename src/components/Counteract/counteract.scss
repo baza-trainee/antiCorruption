@@ -4,11 +4,8 @@
     &__container {
         padding: 80px 0;
         grid-column: span 4;
-        @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+        @media (min-width: $tablet-width) {
             grid-column: span 8;
-        }
-        @media (min-width: $tablet-width) and (max-width: $desktop-width) {
-            grid-column: span 12;
         }
         @media (min-width: $desktop-width) {
             grid-column: span 12;
@@ -79,15 +76,14 @@
     }
 
     &__number {
-        img {
-            height: 26px;
-            width: 26px;
-        }
+        font-family: $font-primary;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: -10px;
         @media (min-width: $tablet-width) {
-            img {
-                height: 40px;
-                width: 40px;
-            }
+            font-size: 80px;
         }
     }
     &__title {
