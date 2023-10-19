@@ -2,13 +2,10 @@
 
 .counteract {
     &__container {
-        padding-bottom: 104px;
+        padding: 80px 0;
         grid-column: span 4;
-        @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+        @media (min-width: $tablet-width) {
             grid-column: span 8;
-        }
-        @media (min-width: $tablet-width) and (max-width: $desktop-width) {
-            grid-column: span 12;
         }
         @media (min-width: $desktop-width) {
             grid-column: span 12;
@@ -24,16 +21,16 @@
         color: #000;
         max-width: 358px;
         height: 92px;
-        margin:0 auto 32px;
+        margin: 0 auto 32px;
         @media (min-width: $tablet-width) {
             font-size: 72px;
             max-width: 680px;
-            margin:0 auto 64px;
+            margin: 0 auto 64px;
         }
         @media (min-width: $desktop-width) {
             font-size: 80px;
             max-width: 1140px;
-            margin:0 auto 80px;
+            margin: 0 auto 80px;
         }
     }
     &__article {
@@ -44,39 +41,49 @@
         color: $white;
         max-width: 358px;
         margin: 0 auto;
-        min-height: 126px;
+        min-height: 96px;
         margin-bottom: 24px;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px 8px;
         @media (min-width: $tablet-width) {
+            min-height: 132px;
             max-width: 680px;
             margin-bottom: 21px;
+            padding: 42px 24px;
         }
         @media (min-width: $desktop-width) {
+            min-height: 128px;
             max-width: 850px;
             margin-bottom: 24px;
+            padding: 42px 24px;
         }
     }
-    &__number {
-        position: absolute;
-        top: 50%;
-        left: 8px;
-        transform: translate(0, -50%);
-        img {
-            height: 22px;
-            width: 18px;
-        }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 342px;
+        width: 100%;
         @media (min-width: $tablet-width) {
-            left: 24px;
-            img {
-                height: 40px;
-                width: 40px;
-            }
+            max-width: 632px;
         }
         @media (min-width: $desktop-width) {
-            img {
-                height: 40px;
-                width: 40px;
-            }
+            max-width: 800px;
+        }
+    }
+
+    &__number {
+        font-family: $font-primary;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: -10px;
+        @media (min-width: $tablet-width) {
+            font-size: 80px;
         }
     }
     &__title {
@@ -89,16 +96,17 @@
         color: $white;
         width: 239px;
         margin: 0 auto;
-        padding-top: 48.5px;
+        padding-bottom: 4px;
+        margin-left: 14px;
         @media (min-width: $tablet-width) {
-            padding-top: 42.5px;
             font-size: 24px;
             width: 427px;
+            margin-left: 55px;
         }
         @media (min-width: $desktop-width) {
-            padding-top: 38px;
             font-size: 32px;
-            width: 597px;
+            width: 600px;
+            margin-left: 59px;
         }
     }
     &__info {
@@ -107,30 +115,27 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-        max-width: 239px;
+        max-width: 260px;
+        width: 100%;
         margin: 0 auto;
-        padding-bottom: 16px;
         @media (min-width: $tablet-width) {
             font-size: 20px;
-            max-width: 427px;
+            max-width: 530px;
+            padding-left: 45px;
         }
         @media (min-width: $desktop-width) {
-            font-size: 20px;
-            max-width: 597px;
+            font-size: 22px;
+            max-width: 600px;
+            padding-left: 0;
         }
     }
     &__btn {
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        transform: translate(0, -50%);
         cursor: pointer;
         img {
             height: 32px;
             width: 32px;
         }
         @media (min-width: $tablet-width) {
-            right: 24px;
             img {
                 height: 40px;
                 width: 40px;
@@ -143,8 +148,8 @@
         transition: height 0.3s ease-in-out;
 
         &--open {
-            height: auto;
-            margin-top: 20px;
+            height: 150px;
+            margin-top: 16px;
         }
     }
 }
