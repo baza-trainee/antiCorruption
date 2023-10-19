@@ -1,22 +1,15 @@
 @import "/src/styles/styles.scss";
 .header {
   &-container {
-    display: grid;
-    grid-template-columns: repeat($mobile-columns, 1fr);
-    grid-gap: $xl-2;
     padding: 16px;
     align-items: center;
     @media (min-width: $tablet-width) {
       padding: 24px 32px;
-      grid-template-columns: repeat($tablet-columns, 1fr);
-      grid-gap: $s;
     }
     @media (min-width: $desktop-width) {
       padding: 8px 150px;
-      grid-template-columns: repeat($desktop-columns, 1fr);
-      grid-gap: $sm;
     }
-    &-logo {
+    &__logo {
       justify-self: start;
       grid-column: 1;
       width: 88px;
@@ -36,7 +29,7 @@
         }
       }
     }
-    &-nav {
+    &__nav {
       display: none;
       @media (min-width: $desktop-width) {
         justify-self: end;
@@ -61,7 +54,7 @@
         }
       }
     }
-    &-button {
+    &__button {
       display: none;
       @media (min-width: $tablet-width) {
         display: unset;
@@ -76,22 +69,23 @@
         color: $white;
         border-radius: 5px;
         padding: 10px 32px;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);        
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
       }
       @media (min-width: $desktop-width) {
         grid-column: 10 / span 3;
         justify-self: end;
       }
     }
-    &-button:hover {
+    &__button:hover {
       background-color: #142d45;
       box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
     }
-    &-button:focus {
+    &__button:focus {
       background-color: $tertiary;
       box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
     }
-    &-burger {
+    &__burger {
       stroke: #000;
       fill: #000;
       width: 40px;
