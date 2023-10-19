@@ -17,22 +17,28 @@
   width: 40px;
   z-index: 11;
 }
-
+.menu-container.open {
+  opacity: 1;
+  transform: translateY(0);
+}
 .menu-container {
   position: absolute;
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   padding: 40px 24px;
   width: 385px;
   height: 417px;
   font-size: $sm;
-  top: -16px;
-  right: -24px;
+  top: 0px;
+  right: 0px;
   background-color: #ffffff;
   z-index: 10;
   border-radius: 5px;
-
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   .menu-container__item {
     margin-bottom: 16px;
     .menu-container__link {

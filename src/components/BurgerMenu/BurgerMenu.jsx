@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import burgerOpen from "../../assets/burgerMenu/burgerOpen.svg";
 import burgerClose from "../../assets/burgerMenu/burgerClose.svg";
-import "./BurgerMenu.scss";
+import "./burgerMenu.scss";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,25 +24,23 @@ const BurgerMenu = () => {
         )}
       </button>
 
-      {isOpen && (
-        <div className="menu-container">
-          <ul className="menu-container__list">
-            <li className="menu-container__item">
-              <a href="#home" className="menu-container__link">
-                Це корупція
-              </a>
-              <hr />
-            </li>
-            <li className="menu-container__item">
-              <a href="#counteract" className="menu-container__link">
-                Як протидіяти корупції
-              </a>
-              <hr />
-            </li>
-          </ul>
-          <a className="support-button">Підтримати проект</a>
-        </div>
-      )}
+      <div className={`menu-container ${isOpen ? "open" : ""}`}>
+        <ul className="menu-container__list">
+          <li className="menu-container__item">
+            <a href="#home" className="menu-container__link">
+              Це корупція
+            </a>
+            <hr />
+          </li>
+          <li className="menu-container__item">
+            <a href="#counteract" className="menu-container__link">
+              Як протидіяти корупції
+            </a>
+            <hr />
+          </li>
+        </ul>
+        <a className="support-button">Підтримати проект</a>
+      </div>
     </nav>
   );
 };
