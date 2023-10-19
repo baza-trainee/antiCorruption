@@ -30,6 +30,7 @@ body {
     margin: 0 auto;
   }
 
+
   @media (min-width: $desktop-width) {
     max-width: $max-width-desktop;
     grid-template-columns: repeat($desktop-columns, 1fr);

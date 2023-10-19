@@ -9,11 +9,11 @@
   background-position: center;
   background-size: auto 765px;
 
-  @media screen and (min-width: ($max-width-tablet)) {
+  @media screen and (min-width: $tablet-width) {
     height: 540px;
     background-size: cover;
   }
-  @media screen and (min-width: ($max-width-desktop)) {
+  @media screen and (min-width: $desktop-width) {
     height: 720px;
     background-size: auto 720px;
   }
@@ -28,15 +28,17 @@
       "content content content content";
     row-gap: 64px;
 
-    @media screen and (min-width: $max-width-tablet) {
-      padding-top: 96px;
-      padding-bottom: 96px;
+    @media screen and (min-width: $tablet-width) {
+      width: $max-width-tablet;
+      padding: 96px 32px ;
       grid-template-areas:
         "title title title title title title title title"
         "content content content content content content content content ";
     }
-    @media screen and (min-width: $max-width-desktop) {
-      padding: 96px 285px 175px;
+    @media screen and (min-width: $desktop-width) {
+      width: $desktop-width;
+     
+      padding: 96px 200px 175px;
       row-gap: 40px;
       grid-template-areas:
         "title title title title title title title title title title title title"
@@ -52,29 +54,30 @@
     line-height: 1.25;
     padding: 0 9px;
 
-    @media screen and (min-width: $max-width-mobile) {
+    @media screen and (min-width: $mobile-width) {
       display: grid;
       grid-template-areas:
-        "title title title unit"
-        "end end end end";
+        "title unit"
+        "end end";
     }
-    @media screen and (min-width: ($max-width-tablet)) {
+    @media screen and (min-width: $tablet-width) {
       font-size: 96px;
       line-height: 1.04;
-      align-items: baseline;
+      align-items: baseline;    
       padding: 0;
       grid-template-areas:
         "title title title"
         "unit unit end";
     }
-    @media screen and (min-width: ($max-width-desktop)) {
+    @media screen and (min-width: $desktop-width) {
       font-size: $xl-1; //140px;
       line-height: 1.2;
+      max-width: 870px;
     }
     &-unit {
       grid-area: unit;
       margin-left: 10px;
-      @media screen and (min-width: ($max-width-tablet)) {
+      @media screen and (min-width: $tablet-width) {
         text-align: end;
         margin-left: 0;
       }
@@ -86,11 +89,11 @@
       font-weight: 700;
       line-height: 1.26;
       text-align: center;
-      @media screen and (min-width: ($max-width-tablet)) {
+      @media screen and (min-width: $tablet-width) {
         font-size: 104px;
         line-height: 0.96;
       }
-      @media screen and (min-width: ($max-width-desktop)) {
+      @media screen and (min-width: $desktop-width) {
         font-size: $xl-1;
         line-height: 1.26;
       }
@@ -105,11 +108,11 @@
     letter-spacing: 1px;
     text-align: center;
 
-    @media screen and (min-width: ($max-width-tablet)) {
+    @media screen and (min-width: $tablet-width) {
       padding: 0 65px;
     }
 
-    @media screen and (min-width: ($max-width-desktop)) {
+    @media screen and (min-width: $desktop-width) {
       text-align: left;
       padding: 0 58px;
     }
