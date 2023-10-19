@@ -2,6 +2,7 @@ import React from "react";
 import "./header.scss";
 import burgerOpen from "../../assets/header/burger-menu.svg";
 import logoMain from "../../assets/header/logo-main.svg";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const Header = () => {
   return (
@@ -39,7 +40,7 @@ const Header = () => {
           Підтримати проект
         </a>
 
-        <img src={burgerOpen} alt="Open" className="header-container__burger" />
+        <BurgerMenu />
       </div>
     </header>
   );

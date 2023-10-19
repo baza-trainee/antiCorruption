@@ -5,6 +5,7 @@
     align-items: center;
     @media (min-width: $tablet-width) {
       padding: 24px 32px;
+      justify-content: space-between;
     }
     @media (min-width: $desktop-width) {
       padding: 8px 150px;
@@ -85,19 +86,6 @@
       background-color: $tertiary;
       box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
     }
-    &__burger {
-      stroke: #000;
-      fill: #000;
-      width: 40px;
-      height: 40px;
-      justify-self: end;
-      grid-column: 4;
-      @media (min-width: $tablet-width) {
-        grid-column: 8;
-      }
-      @media (min-width: $desktop-width) {
-        display: none;
-      }
-    }
+    
   }
 }
