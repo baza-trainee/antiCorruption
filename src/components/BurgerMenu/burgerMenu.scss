@@ -3,6 +3,7 @@
 .burger-menu {
   position: relative;
   grid-column: 4;
+  justify-self: end;
 
   @media (min-width: $tablet-width) {
     grid-column: 8;
@@ -28,7 +29,7 @@
 
 .menu-container.open {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(457px);
 }
 
 .menu-container {
@@ -41,7 +42,7 @@
   width: 385px;
   height: 417px;
   font-size: $sm;
-  top: 0px;
+  top: -457px;
   right: 0px;
   background-color: #ffffff;
   z-index: 10;

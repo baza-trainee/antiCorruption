@@ -19,8 +19,10 @@
   transition: 0.3s;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    transition: 0.3s;
-    background-color: $secondary-color;
+    background-color: #142d45;
+    box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
   }
 }
