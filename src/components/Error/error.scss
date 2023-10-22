@@ -3,27 +3,29 @@
 
 .page404 {
   height: 764px;
+  padding-bottom: 10px; 
+  @include flex(center, center, column);
 
-  @media screen and (min-width: $max-width-tablet) { 
-    & {
-      height: 100vh;
-    }
-  }
+  background-image: url('/src/assets/error/backgroud.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
 
   &__content {
-    background-image: url('/src/assets/error/backgroud.png');
-    background-size: 200% 110%;
-    background-repeat: no-repeat;
-    background-position: center;
-
     @include flex(center, center, column);
     padding: 68.5px 16px; 
     row-gap: 64px;
-
+    
     @media screen and (min-width: $max-width-tablet) { 
       & {
-          background-size: 100% 110%;
+          height: 504px;
           row-gap: 16px;
+      }
+    }
+
+    @media screen and (min-width: $desktop-width) { 
+      & {
+        height: 720px;
       }
     }
   }
@@ -105,6 +107,10 @@
     line-height: 27px;
     text-align: center;
 
+    &:visited {
+      color: $white;
+    }
+
     @media screen and (min-width: $max-width-tablet) { 
       & {
         font-size: 16px;
@@ -122,9 +128,3 @@
     }
   }
 }
-
-a:visited {
-  color: $white;
-}
-
-
