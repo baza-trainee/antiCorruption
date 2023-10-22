@@ -13,7 +13,7 @@ const Header = () => {
             src={logoMain}
             alt="Logo"
             className="header-container__logo-img"
-            width={87}
+            width={142}
           />
         </a>
         <div className="header-container__nav">

@@ -13,20 +13,21 @@
     &__logo {
       justify-self: start;
       grid-column: 1;
-      width: 88px;
-      height: 40px;
-      @media (min-width: $tablet-width) {
+      width: 126px;
+      height: 57px;
+      @media (min-width: $max-width-mobile) {
         width: 142px;
         height: 64px;
+      }
+      @media (min-width: $tablet-width) {        
         grid-column: 1 / span 2;
       }
       @media (min-width: $desktop-width) {
       }
       &-img {
-        @media (min-width: $tablet-width) {
+        width: 126px;
+        @media (min-width: $max-width-mobile) {
           width: 142px;
-        }
-        @media (min-width: $desktop-width) {
         }
       }
     }
@@ -60,10 +61,10 @@
     }
     &__button {
       display: none;
-      @media (min-width: $tablet-width) {
+      @media (min-width: $desktop-width) {
+        grid-column: 10 / span 3;
+        justify-self: end;
         display: unset;
-        grid-column: 4 / span 3;
-        justify-self: center;
         font-size: $s;
         font-weight: 400;
         line-height: normal;
@@ -75,10 +76,6 @@
         padding: 10px 32px;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
           box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      @media (min-width: $desktop-width) {
-        grid-column: 10 / span 3;
-        justify-self: end;
       }
     }
     &__button:hover {
