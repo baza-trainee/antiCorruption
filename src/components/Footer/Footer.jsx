@@ -1,14 +1,21 @@
+import { Link } from 'react-router-dom';
 import { contacts, legalInformation } from '../../constants';
 import logo from '../../assets/logo.svg';
 import './footer.scss'
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer className='footer'>
       <div className='footer__container'>
         <div className='footer__wrap'>
           <div className='footer__logo'>
-            <img src={logo} alt="Logo" />
+            <Link to='/' onClick={scrollToTop}>
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
           <button className='footer__btn'>
             Підтримати проект
