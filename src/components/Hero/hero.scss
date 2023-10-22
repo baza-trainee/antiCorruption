@@ -1,5 +1,4 @@
 @import "../../styles/variables";
-@import "../../styles/styles.scss";
 
 .hero {
   height: 765px;
@@ -45,11 +44,7 @@
     @media screen and (min-width: $max-width-desktop) {
       width: $max-width-desktop;
       padding-top: 96px;
-      padding-bottom: 170px;
-    //  row-gap: 40px;
-    //  grid-column: span 12;
-
-    //  padding: 96px 285px 175px;
+      padding-bottom: 170px;    
       grid-template-areas:
         "title title title title title title title title title title title title"
         "content content content content content content content content content content content content";
@@ -86,8 +81,6 @@
       font-size: $xl-1; //140px;
       line-height: 1.2;
       width: 870px;
-      // padding-left: 135px;
-      // padding-right: 135px;
     }
     &-unit {
       grid-area: unit;
