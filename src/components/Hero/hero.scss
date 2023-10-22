@@ -8,15 +8,14 @@
   background-image: url(./backgroud-min.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto 765px;
+  background-size: 200% 110%;
 
   @media screen and (min-width: $max-width-tablet) {
     height: 540px;
-    background-size: cover;
+    background-size: 100% 110%;
   }
   @media screen and (min-width: $max-width-desktop) {
-    height: 720px;
-    background-size: auto 720px;
+    height: 720px;   
   }
 
   &__container {
