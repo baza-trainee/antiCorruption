@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="grid-container header-container">
-        <a className="header-container__logo" href="/index.html">
+        <a className="header-container__logo" href="/">
           <img
             src={logoMain}
             alt="Logo"
