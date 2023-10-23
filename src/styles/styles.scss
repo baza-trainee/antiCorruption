@@ -11,29 +11,40 @@ body {
   line-height: 1.5;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .grid-container {
-  margin: 0 auto;
   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
   display: grid;
   grid-gap: $sm;
 
-  @media (min-width: $mobile-width) {
-    max-width: $max-width-mobile;
+  @media (min-width: $max-width-mobile) {
+    // width: $max-width-mobile;
     grid-template-columns: repeat($mobile-columns, 1fr);
     grid-gap: $xl-2;
-    margin: 0 auto;
+    
   }
-  @media (min-width: $tablet-width) {
-    max-width: $max-width-tablet;
+
+  @media (min-width: $max-width-tablet) {
+    // width: $max-width-tablet;
+    padding-left: 32px;
+    padding-right: 32px;
     grid-template-columns: repeat($tablet-columns, 1fr);
     grid-gap: $lg;
-    margin: 0 auto;
+    
   }
 
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $max-width-desktop) {
     max-width: $max-width-desktop;
+    padding-left: 150px;
+    padding-right: 150px;
     grid-template-columns: repeat($desktop-columns, 1fr);
-    margin: 0 auto;
+   
   }
 }

@@ -1,18 +1,43 @@
 @import '../../styles/variables';
 @import '../../styles/mixin';
+@import '../../styles//styles.scss';
 
 
 
 .corruption-case{
-    padding: 0 $s;
+  margin: 0 auto;
+    width: 100%;
   
-    @media screen and (min-width: $max-width-tablet) {
+    @media (min-width: $mobile-width) {
+      max-width: $max-width-mobile;
+    }
+  
+    @media (min-width: $tablet-width) {
+      max-width: $max-width-tablet;
+    }
+  
+    @media (min-width: $desktop-width) {
+      max-width: $max-width-desktop;
+
+    }
+  
+    &__container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 0 $s;
+    
+   @media screen and (min-width: $tablet-width) {
       padding: 0 $lg;
 }
 
-    @media screen and (min-width: $max-width-desktop) {
-      padding: 0 150px;
+    @media screen and (min-width: $desktop-width) {
+      max-width: $desktop-width;
+      padding: 0 150px;    
     }
+  }
+    
 
     &__title {
       font-family: Caveat;
@@ -22,7 +47,7 @@
       color: #000;
       line-height: normal;
     
-      @media screen and (min-width: $max-width-tablet) {
+      @media screen and (min-width: $tablet-width) {
         font-size: 72px;
         text-align: left;
       }
@@ -32,29 +57,33 @@
         text-align: center;
       }
     
-      @media screen and (min-width: $max-width-desktop) {
+      @media screen and (min-width: $desktop-width) {
         font-size: 80px;
         text-align: center;
       }
     }
 
     &__list {
-      @include grid(1fr, $lg);
+      display: flex;
+      flex-direction: column;
+      row-gap:$lg;
       margin-top: $lg;
     
-      @media screen and (min-width: $max-width-tablet) {
-        @include grid(1fr, 64px);
+      @media screen and (min-width: $tablet-width) {
         margin-top: 64px;
+        max-width:$tablet-width;
+        row-gap:64px;
       }
     
       @media screen and (min-width: 844px) and (orientation:landscape) {
-        @include grid(1fr, $lg);
         margin-top: $lg;
+        row-gap:$lg
       }
     
-      @media screen and (min-width: $max-width-desktop) {
-        @include grid(1fr, $xl);
+      @media screen and (min-width: $desktop-width) {
         margin-top: $xl;
+        max-width: 1140px;
+        row-gap:$xl;
       }
     }
 }
