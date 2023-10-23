@@ -11,20 +11,20 @@ const BurgerMenu = () => {
   };
 
   return (
-    <nav className="burger-menu">
+    <nav className={`burger-menu ${isOpen ? "open" : ""}`}>
       <button className="burger-menu__button" onClick={toggleMenu}>
-        {isOpen ? (
+        <img src={burgerOpen} alt="Open" className="burger-menu__icon_open" />
+      </button>
+
+      {/* Opened state */}
+      <div className={`menu-container ${isOpen ? "open" : ""}`}>
+        <button className="" onClick={toggleMenu}>
           <img
             src={burgerClose}
             alt="Close"
             className="burger-menu__icon_close"
           />
-        ) : (
-          <img src={burgerOpen} alt="Open" className="burger-menu__icon_open" />
-        )}
-      </button>
-
-      <div className={`menu-container ${isOpen ? "open" : ""}`}>
+        </button>
         <ul className="menu-container__list">
           <li className="menu-container__item">
             <a href="#home" className="menu-container__link">
