@@ -5,7 +5,7 @@
 
 
 .corruption-case{
-  margin: 0 auto;
+  margin: 104px auto 0;
     width: 100%;
   
     @media (min-width: $mobile-width) {
@@ -17,6 +17,7 @@
     }
   
     @media (min-width: $desktop-width) {
+      margin-top: 80px;
       max-width: $max-width-desktop;
 
     }
