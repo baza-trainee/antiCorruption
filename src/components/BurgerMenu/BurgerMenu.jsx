@@ -9,6 +9,9 @@ const BurgerMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const toggleCloseMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className={`burger-menu ${isOpen ? "open" : ""}`}>
@@ -27,19 +30,29 @@ const BurgerMenu = () => {
         </button>
         <ul className="menu-container__list">
           <li className="menu-container__item">
-            <a href="#home" className="menu-container__link">
+            <a
+              href="#home"
+              className="menu-container__link"
+              onClick={toggleCloseMenu}
+            >
               Це корупція
             </a>
             <hr />
           </li>
           <li className="menu-container__item">
-            <a href="#counteract" className="menu-container__link">
+            <a
+              href="#counteract"
+              className="menu-container__link"
+              onClick={toggleCloseMenu}
+            >
               Як протидіяти корупції
             </a>
             <hr />
           </li>
         </ul>
-        <a className="support-button">Підтримати проект</a>
+        <a className="support-button" onClick={toggleCloseMenu}>
+          Підтримати проект
+        </a>
       </div>
     </nav>
   );
