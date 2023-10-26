@@ -23,7 +23,7 @@ const Header = () => {
             <li className="header-container__nav-list-item">
               <a
                 className="header-container__nav-list-item-link"
-                href="#corruption"
+                href="#home"
               >
                 Це корупція
               </a>
