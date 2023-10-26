@@ -48,17 +48,17 @@
       color: #000;
       line-height: normal;
     
-      @media screen and (min-width: $tablet-width) {
+      @media screen and (min-width: $max-width-tablet) {
         font-size: 72px;
         text-align: left;
       }
     
       @media screen and (min-width: 844px) and (orientation:landscape) {
-        font-size: 60px;
+        font-size: 72px;
         text-align: center;
       }
     
-      @media screen and (min-width: $desktop-width) {
+      @media screen and (min-width: $max-width-desktop) {
         font-size: 80px;
         text-align: center;
       }
