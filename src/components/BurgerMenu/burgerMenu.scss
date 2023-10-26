@@ -76,7 +76,6 @@
 .support-button {
   @include button(16px 32px);
   width: 253px;
-  letter-spacing: 0.5px;
 }
 
 @media (max-width: $max-width-tablet) {
