@@ -24,8 +24,6 @@ const Footer = () => {
         })
         .catch(error => console.error('Помилка копіювання:', error));
     }
-
-    console.log(item.contact);
   };
 
   return (
