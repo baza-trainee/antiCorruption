@@ -1,11 +1,31 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { contacts, legalInformation } from '../../constants';
 import logo from '../../assets/logo.svg';
-import './footer.scss'
+import './footer.scss';
 
 const Footer = () => {
+  const [copiedText, setCopiedText] = useState(null);
+
   const scrollToTop = () => {
     window.scrollTo(0, 0);
+  };
+
+  const handleCopyOrCall = (item, event) => {
+    event.preventDefault();
+
+    if (item.type === 'phone' && window.innerWidth >= 360 && window.innerWidth <= 744) {
+      window.location.href = `tel:${item.contact}`;
+    } else {
+      navigator.clipboard.writeText(item.contact)
+        .then(() => {
+          setCopiedText(item.contact);
+          setTimeout(() => setCopiedText(null), 2000);
+        })
+        .catch(error => console.error('Помилка копіювання:', error));
+    }
+
+    console.log(item.contact);
   };
 
   return (
@@ -18,12 +38,28 @@ const Footer = () => {
             </Link>
           </div>
           <button className='footer__btn'>
-            Підтримати проект
+            Підтримати проєкт
           </button>
           <ul className='footer__contacts footer__list'>
             {contacts.map((item) => (
-              <li key={item.id} className='footer__contact'>
-                {item.contact}
+              <li
+                key={item.id}
+                className='footer__contact'
+                onClick={(event) => handleCopyOrCall(item, event)}
+              >
+                {item.type === 'phone' ? (
+                  <a href={`tel:${item.contact}`}>{item.contact}</a>
+                ) : (
+                  <a href={`mailto:${item.contact}`}>{item.contact}</a>
+                )}
+                {copiedText === item.contact && (
+                  <span className='footer__tooltip'>
+                    {item.type === 'phone'
+                      ? 'Номер телефону скопійовано'
+                      : 'Електронну пошту скопійовано'
+                    }
+                  </span>
+                )}
               </li>
             ))}
           </ul>

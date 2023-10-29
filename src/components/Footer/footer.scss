@@ -12,7 +12,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    gap: 42px;
+    gap: 40px;
     padding: 24px 16px;
 
     @media (min-width: $tablet-width) {
@@ -34,20 +34,18 @@
   &__wrap {
     display: grid;
     align-items: center;
-    grid-template-areas: 'logo links contacts' 'btn btn btn';
-    column-gap: 13px;
+    grid-template-areas: 'logo btn btn' 'links links contacts';
+    column-gap: 11px;
     row-gap: 40px;
 
     @media (min-width: $tablet-width) {
       grid-template-areas: 'logo contacts' 'btn links';
-      column-gap: 265px;
+      column-gap: 293px;
       row-gap: 45px;
     }
 
     @media (min-width: $mobile-g-width) {
-      grid-template-areas: 'logo contacts links' 'btn contacts links';
-      column-gap: 118px;
-      row-gap: 58px;
+      column-gap: 390px;
     }
 
     @media (min-width: $desktop-width) {
@@ -83,7 +81,7 @@
 
   &__btn {
     grid-area: btn;
-    justify-self: center;
+    justify-self: flex-end;
     font-family: $font-secondary;
     font-size: 16px;
     letter-spacing: 0.8px;
@@ -122,37 +120,75 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 10px;
+    font-size: 14px;
+    gap: 12px;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: 0.2px;
 
     @media (min-width: $tablet-width) {
       font-size: 12px;
       gap: 13px;
     }
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+      gap: 16px;
+    }
   }
 
   &__contacts {
     grid-area: contacts;
+    align-items: flex-end;
+
+    @media (min-width: $tablet-width) {
+      align-items: flex-start;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+      align-items: flex-end;
+    }
+  }
+
+  &__contact {
+    position: relative;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: -100px;
+    left: 5px;
+    font-family: $font-secondary;
+    font-size: 20px;
+    text-align: center;
+    color: $text;
+    background: $grey;
+    border-radius: 5px;
+    width: 290px;
+    padding: 20px;
+    z-index: 22;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  &__links {
+    grid-area: links;
 
     @media (min-width: $desktop-width) {
       font-size: 16px;
     }
   }
 
-  &__links {
-    grid-area: links;
-    cursor: pointer;
+  &__link {
+    text-decoration: underline;
 
-    @media (min-width: $mobile-g-width) {
-      margin-left: 23px;
-    }
-
-    @media (min-width: $desktop-width) {
-      font-size: 16px;
-      margin-left: 0px;
+    &:last-child {
+      text-decoration: none;
     }
   }
 
