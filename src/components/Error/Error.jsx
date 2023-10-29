@@ -1,4 +1,5 @@
 import './error.scss';
+import error from '../../assets/error/image-404.png';
 import { Link } from 'react-router-dom'
 
 const Error = () => {
@@ -8,7 +9,7 @@ const Error = () => {
       <div>
         <img 
           className='page404__image'
-          src="./src/assets/error/image-404.png" 
+          src={error}
           alt="404" />
       </div>
       <div className='page404__description'>
