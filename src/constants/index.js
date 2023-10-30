@@ -1,15 +1,18 @@
 export const contacts = [
   {
     id: 1,
-    contact: "+380 12 345 78 89",
+    type: 'phone',
+    contact: "+38 067 568 17 88",
   },
   {
     id: 2,
-    contact: "+380 12 345 78 89",
+    type: 'phone',
+    contact: "+38 063 628 66 30",
   },
   {
     id: 3,
-    contact: "poshta@gmail.com",
+    type: 'email',
+    contact: "info@baza-trainee.tech",
   },
 ];
 
