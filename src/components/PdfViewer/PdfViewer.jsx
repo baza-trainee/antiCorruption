@@ -13,7 +13,6 @@ const PdfViewer = ({ pdfPath, onClose }) => {
   const [pageWidth, setPageWidth] = useState(window.innerWidth * 0.8);
 
   function onDocumentLoadSuccess({ numPages }) {
-    console.log(numPages);
     setNumPages(numPages);
   }
 
