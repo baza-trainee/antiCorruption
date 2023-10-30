@@ -1,14 +1,21 @@
-import "./counteract.scss";
+import React, { useState } from "react";
 import Plus from "../../assets/counteract/ph_plus-thin.svg";
 import Minus from "../../assets/counteract/ph_minus-thin.svg";
+import "./counteract.scss";
 
-const Counteract = ({ questions, activeId, toggleQuestion }) => {
+const Counteract = ({ questions }) => {
+  const [activeId, setActiveId] = useState(null);
+
+  const toggleQuestion = (id) => {
+    setActiveId(activeId === id ? null : id);
+  };
+
   return (
     <div className="counteract__container">
-      <h2 className="counteract__heading ">Як протидіяти корупції</h2>
+      <h2 className="counteract__heading">Як протидіяти корупції</h2>
       <ul>
         {questions.map((question) => {
-          const { id, title, info, img, alt } = question;
+          const { id, title, info } = question;
           const isActive = id === activeId;
           const innerClass = `counteract__inner ${
             isActive ? "counteract__inner--open" : ""

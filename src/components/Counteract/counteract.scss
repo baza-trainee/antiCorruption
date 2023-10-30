@@ -67,6 +67,7 @@
         align-items: center;
         max-width: 342px;
         width: 100%;
+
         @media (min-width: $tablet-width) {
             max-width: 632px;
         }
@@ -117,7 +118,7 @@
         line-height: normal;
         max-width: 260px;
         width: 100%;
-        margin: 0 auto;
+        margin: 16px auto 0;
         @media (min-width: $tablet-width) {
             font-size: 20px;
             max-width: 530px;
@@ -143,13 +144,12 @@
         }
     }
     &__inner {
-        height: 0;
+        max-height: 0;
         overflow: hidden;
-        transition: height 0.3s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
 
         &--open {
-            height: 150px;
-            margin-top: 16px;
+            max-height: 300px;
         }
     }
 }
