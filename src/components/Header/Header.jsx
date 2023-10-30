@@ -39,7 +39,7 @@ const Header = () => {
           </ul>
         </div>
         <a className="header-container__button" href="/">
-          Підтримати проект
+          Підтримати проєкт
         </a>
 
         <BurgerMenu />
