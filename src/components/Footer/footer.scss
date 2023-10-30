@@ -38,14 +38,14 @@
     column-gap: 9px;
     row-gap: 40px;
 
-    @media (min-width: $tablet-width) { //680
+    @media (min-width: $tablet-width) {
       grid-template-areas: 'logo contacts' 'btn links';
       justify-content: space-between;
       row-gap: 45px;
       width: calc(100vw - 64px);
     }
 
-    @media (min-width: $desktop-width) { //1440
+    @media (min-width: $desktop-width) {
       grid-template-areas: 'logo btn contacts links';
       column-gap: 94px;
       row-gap: 0px;
