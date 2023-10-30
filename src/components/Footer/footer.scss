@@ -35,24 +35,22 @@
     display: grid;
     align-items: center;
     grid-template-areas: 'logo btn btn' 'links links contacts';
-    column-gap: 11px;
+    column-gap: 9px;
     row-gap: 40px;
 
-    @media (min-width: $tablet-width) {
+    @media (min-width: $tablet-width) { //680
       grid-template-areas: 'logo contacts' 'btn links';
-      column-gap: 293px;
+      justify-content: space-between;
       row-gap: 45px;
+      width: calc(100vw - 64px);
     }
 
-    @media (min-width: $mobile-g-width) {
-      column-gap: 390px;
-    }
-
-    @media (min-width: $desktop-width) {
+    @media (min-width: $desktop-width) { //1440
       grid-template-areas: 'logo btn contacts links';
       column-gap: 94px;
       row-gap: 0px;
       padding: 51px 0;
+      width: 100%;
     }
   }
 
@@ -185,10 +183,13 @@
   }
 
   &__link {
-    text-decoration: underline;
-
-    &:last-child {
-      text-decoration: none;
+    button {
+      font-size: inherit;
+      color: inherit;
+      font-family: inherit;
+      text-decoration: underline;
+      text-align: start;
+      cursor: pointer;
     }
   }
 
