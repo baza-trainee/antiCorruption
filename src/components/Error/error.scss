@@ -2,7 +2,6 @@
 @import '../../styles/mixin';
 
 .page404 {
-  height: 764px;
   padding-bottom: 10px; 
   @include flex(center, center, column);
 
@@ -18,14 +17,8 @@
     
     @media screen and (min-width: $max-width-tablet) { 
       & {
-          height: 504px;
+          height: 100vh;
           row-gap: 16px;
-      }
-    }
-
-    @media screen and (min-width: $desktop-width) { 
-      & {
-        height: 720px;
       }
     }
   }
