@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { contacts, legalInformation } from '../../constants';
+import PdfViewer from '../PdfViewer/PdfViewer';
 import logo from '../../assets/logo.svg';
 import './footer.scss';
 
 const Footer = () => {
   const [copiedText, setCopiedText] = useState(null);
+  const [showPdf, setShowPdf] = useState(false);
+  const [pdfSrc, setPdfSrc] = useState(null);
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -24,6 +27,16 @@ const Footer = () => {
         })
         .catch(error => console.error('Помилка копіювання:', error));
     }
+  };
+
+  const openPdfInModal = (pdfPath) => {
+    setPdfSrc(pdfPath);
+    setShowPdf(true);
+  };
+
+  const closePdfModal = () => {
+    setShowPdf(false);
+    setPdfSrc(null);
   };
 
   return (
@@ -62,13 +75,22 @@ const Footer = () => {
             ))}
           </ul>
           <ul className='footer__links footer__list'>
-            {legalInformation.map((item) => (
-              <li key={item.id} className='footer__link'>
-                {item.link}
-              </li>
-            ))}
-          </ul>
+          {legalInformation.map((item) => (
+            <li key={item.id} className='footer__link'>
+              {item.pdfPath ? (
+                <button onClick={() => openPdfInModal(item.pdfPath)}>
+                  {item.link}
+                </button>
+              ) : (
+                item.link
+              )}
+            </li>
+          ))}
+        </ul>
         </div>
+        {showPdf && (
+          <PdfViewer pdfPath={pdfSrc} onClose={closePdfModal} />
+        )}
         <div className='footer__copyright'>
           <p className='footer__copyright-text'>
             Розробка BazaTraineeUkraine 2023
