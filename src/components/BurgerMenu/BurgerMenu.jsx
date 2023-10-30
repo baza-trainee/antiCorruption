@@ -51,7 +51,7 @@ const BurgerMenu = () => {
           </li>
         </ul>
         <a className="support-button" onClick={toggleCloseMenu}>
-          Підтримати проект
+          Підтримати проєкт
         </a>
       </div>
     </nav>

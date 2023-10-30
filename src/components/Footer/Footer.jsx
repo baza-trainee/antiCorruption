@@ -18,7 +18,7 @@ const Footer = () => {
             </Link>
           </div>
           <button className='footer__btn'>
-            Підтримати проект
+            Підтримати проєкт
           </button>
           <ul className='footer__contacts footer__list'>
             {contacts.map((item) => (
