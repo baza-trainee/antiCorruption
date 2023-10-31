@@ -20,14 +20,18 @@ export const legalInformation = [
   {
     id: 1,
     link: "Політика конфіденційності",
+    pdfPath: '/documents/Privacy-policy.pdf'
+    
   },
   {
     id: 2,
     link: "Правила користування сайтом",
+    pdfPath: '/documents/Terms-of-use-of-the-website.pdf'
   },
   {
     id: 3,
     link: "Звітність",
+    pdfPath: null,
   },
 ];
 
