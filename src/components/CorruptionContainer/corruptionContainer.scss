@@ -21,6 +21,9 @@
       max-width: $max-width-desktop;
 
     }
+    @media (min-width:1920px) {
+      max-width: $max-width-desktop;
+    }
   
     &__container{
       display: flex;
@@ -37,6 +40,9 @@
       max-width: $desktop-width;
       padding: 0 150px;    
     }
+    @media screen and (min-width:1920px){
+      max-width: $max-width-desktop;
+    }
   }
     
 
@@ -50,12 +56,7 @@
     
       @media screen and (min-width: $max-width-tablet) {
         font-size: 72px;
-        text-align: left;
-      }
-    
-      @media screen and (min-width: 844px) and (orientation:landscape) {
-        font-size: 72px;
-        text-align: center;
+      
       }
     
       @media screen and (min-width: $max-width-desktop) {
@@ -83,7 +84,7 @@
     
       @media screen and (min-width: $desktop-width) {
         margin-top: $xl;
-        max-width: 1140px;
+        max-width: $desktop-width;
         row-gap:$xl;
       }
     }
