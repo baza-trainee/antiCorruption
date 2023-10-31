@@ -21,6 +21,9 @@
       max-width: $max-width-desktop;
 
     }
+    @media (min-width:1920px) {
+      max-width: $max-width-desktop;
+    }
   
     &__container{
       display: flex;
@@ -36,6 +39,9 @@
     @media screen and (min-width: $desktop-width) {
       max-width: $desktop-width;
       padding: 0 150px;    
+    }
+    @media screen and (min-width:1920px){
+      max-width: $max-width-desktop;
     }
   }
     
@@ -83,7 +89,7 @@
     
       @media screen and (min-width: $desktop-width) {
         margin-top: $xl;
-        max-width: 1140px;
+        max-width: $desktop-width;
         row-gap:$xl;
       }
     }

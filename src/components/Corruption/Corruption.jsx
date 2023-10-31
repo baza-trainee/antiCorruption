@@ -2,6 +2,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useRef, useState, useEffect } from 'react';
 
 import './corruption.scss';
+import { defineSliderPosition } from '../../utils/index';
 import arrowIcon from '../../assets/corruption/arrow-icon.svg';
 
 const Corruption = ({
@@ -20,19 +21,32 @@ const Corruption = ({
   altCause,
   altConsequences,
 }) => {
-  const [imageRevealFraq, setImageRevealFraq] = useState(1);
+  const [imageRevealFraq, setImageRevealFraq] = useState(0.97);
   const imageContainer = useRef(undefined);
 
-  const isMobilePosition = useMediaQuery({ maxWidth: 743 });
-  const isTabletPosition = useMediaQuery({ minWidth: 744 });
+  const isMobilePosition = useMediaQuery({ maxWidth: 679 });
+  const isTabletPosition = useMediaQuery({ minWidth: 680, maxWidth: 1139 });
+  const isDesktopPosition = useMediaQuery({ minWidth: 1140, maxWidth: 1919 });
+  const isMaxDesktopPosition = useMediaQuery({ minWidth: 1920 });
 
   useEffect(() => {
     if (isMobilePosition) {
-      setImageRevealFraq(1);
+      setImageRevealFraq(0.97);
     } else if (isTabletPosition) {
       setImageRevealFraq(0.984);
+    } else if (isDesktopPosition) {
+      setImageRevealFraq(0.978);
+    } else if (isMaxDesktopPosition) {
+      setImageRevealFraq(0.984);
     }
-  }, [isMobilePosition, isTabletPosition]);
+  }, [
+    isMobilePosition,
+    isTabletPosition,
+    isDesktopPosition,
+    isMaxDesktopPosition,
+  ]);
+
+  console.log(imageRevealFraq);
 
   const slide = (xPosition) => {
     const containerBoundingRect =
@@ -40,23 +54,14 @@ const Corruption = ({
     const slider =
       (xPosition - containerBoundingRect.left) / containerBoundingRect.width;
     setImageRevealFraq(() => {
-      if (isMobilePosition) {
-        if (xPosition < containerBoundingRect.left) {
-          return 0;
-        } else if (xPosition > containerBoundingRect.right) {
-          return 1;
-        } else {
-          return slider;
-        }
-      } else {
-        if (xPosition < containerBoundingRect.left + 16) {
-          return 0.016;
-        } else if (xPosition > containerBoundingRect.right - 16) {
-          return 0.984;
-        } else {
-          return slider;
-        }
-      }
+      return defineSliderPosition(
+        isMobilePosition,
+        isTabletPosition,
+        isMaxDesktopPosition,
+        xPosition,
+        containerBoundingRect,
+        slider
+      );
     });
   };
 
@@ -89,7 +94,7 @@ const Corruption = ({
       >
         <div className='item--cause__text-box'>
           <p
-            className={imageRevealFraq < 0.02 ? 'hidden' : 'item--cause__text'}
+            className={imageRevealFraq < 0.031 ? 'hidden' : 'item--cause__text'}
           >
             {textCause}
           </p>
@@ -130,7 +135,7 @@ const Corruption = ({
         <div className='item--consequences__text-box'>
           <p
             className={
-              imageRevealFraq > 0.98 ? 'hidden' : 'item--consequences__text'
+              imageRevealFraq > 0.969 ? 'hidden' : 'item--consequences__text'
             }
           >
             {textConsequences}
