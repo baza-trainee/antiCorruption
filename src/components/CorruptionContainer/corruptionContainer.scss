@@ -56,12 +56,7 @@
     
       @media screen and (min-width: $max-width-tablet) {
         font-size: 72px;
-        text-align: left;
-      }
-    
-      @media screen and (min-width: 844px) and (orientation:landscape) {
-        font-size: 72px;
-        text-align: center;
+      
       }
     
       @media screen and (min-width: $max-width-desktop) {
