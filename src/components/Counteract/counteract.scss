@@ -22,12 +22,12 @@
         max-width: 358px;
         height: 92px;
         margin: 0 auto 32px;
-        @media (min-width: $tablet-width) {
+        @media (min-width: $max-width-tablet) {
             font-size: 72px;
             max-width: 680px;
             margin: 0 auto 64px;
         }
-        @media (min-width: $desktop-width) {
+        @media (min-width: $max-width-desktop) {
             font-size: 80px;
             max-width: 1140px;
             margin: 0 auto 80px;
