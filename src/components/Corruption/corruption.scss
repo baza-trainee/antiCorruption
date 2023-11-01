@@ -206,9 +206,14 @@
     }
 
     @media screen and (min-width: $desktop-width) {
+      bottom: 36%;
       height: 40px;
       width: 40px;
       margin-left: -20px;
+    }
+
+    @media screen and (min-width: 1920px) {
+      bottom: 39%;
     }
   }
 
