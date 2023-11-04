@@ -95,24 +95,25 @@ import noQualificationTablet2x from '../assets/corruption/no-qualification/no-qu
 import noQualificationMobile1x from '../assets/corruption/no-qualification/no-qualification-mobile-1x.jpg';
 import noQualificationMobile2x from '../assets/corruption/no-qualification/no-qualification-mobile-2x.jpg';
 
+export const firstElementCorruptionCases = {
+  srcCause: driverMobile1x,
+  srcConseq: carAccidMobile1x,
+  imageCauseDesktop: `${driverDesktop1x} 1140w, ${driverDesktop2x} 2280w`,
+  imageCauseMobileHor: `${driverMobileHor1x} 680w, ${driverMobileHor2x} 1360w`,
+  imageCauseTablet: `${driverTablet1x} 680w, ${driverTablet2x} 1360w`,
+  imageCauseMobile: `${driverMobile1x} 370w, ${driverMobile2x} 740w`,
+  imageConseqDesktop: `${carAccidDesktop1x} 1140w, ${carAccidDesktop2x} 2280w`,
+  imageConseqMobileHor: `${carAccidMobileHor1x} 680w, ${carAccidMobileHor2x} 1360w`,
+  imageConseqTablet: `${carAccidTablet1x} 680w, ${carAccidTablet2x} 1360w`,
+  imageConseqMobile: `${carAccidMobile1x} 370w, ${carAccidMobile2x} 740w`,
+  altCause: 'Інструктор з водіння та учениця сидять у машині',
+  altConsequences:
+    'Лікарі швидкої надають допомогу дитині, яка знаходиться на медичній каталці.',
+  textCause: 'Дав хабара за водійські права',
+  textConsequences: 'Під колесами гине людина',
+};
+
 export const corruptionCases = [
-  {
-    srcCause: driverMobile1x,
-    srcConseq: carAccidMobile1x,
-    imageCauseDesktop: `${driverDesktop1x} 1140w, ${driverDesktop2x} 2280w`,
-    imageCauseMobileHor: `${driverMobileHor1x} 680w, ${driverMobileHor2x} 1360w`,
-    imageCauseTablet: `${driverTablet1x} 680w, ${driverTablet2x} 1360w`,
-    imageCauseMobile: `${driverMobile1x} 370w, ${driverMobile2x} 740w`,
-    imageConseqDesktop: `${carAccidDesktop1x} 1140w, ${carAccidDesktop2x} 2280w`,
-    imageConseqMobileHor: `${carAccidMobileHor1x} 680w, ${carAccidMobileHor2x} 1360w`,
-    imageConseqTablet: `${carAccidTablet1x} 680w, ${carAccidTablet2x} 1360w`,
-    imageConseqMobile: `${carAccidMobile1x} 370w, ${carAccidMobile2x} 740w`,
-    altCause: 'Інструктор з водіння та учениця сидять у машині',
-    altConsequences:
-      'Лікарі швидкої надають допомогу дитині, яка знаходиться на медичній каталці.',
-    textCause: 'Дав хабара за водійські права',
-    textConsequences: 'Під колесами гине людина',
-  },
   {
     srcCause: fireInspMobile1x,
     srcConseq: fireMobile1x,
