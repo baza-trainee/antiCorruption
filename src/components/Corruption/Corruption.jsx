@@ -20,6 +20,7 @@ const Corruption = ({
   textConsequences,
   altCause,
   altConsequences,
+  children,
 }) => {
   const [imageRevealFraq, setImageRevealFraq] = useState(0.97);
   const imageContainer = useRef(undefined);
@@ -45,8 +46,6 @@ const Corruption = ({
     isDesktopPosition,
     isMaxDesktopPosition,
   ]);
-
-  console.log(imageRevealFraq);
 
   const slide = (xPosition) => {
     const containerBoundingRect =
@@ -188,6 +187,7 @@ const Corruption = ({
           </div>
         </div>
       </div>
+      {children}
     </li>
   );
 };

@@ -88,6 +88,41 @@
         row-gap:$xl;
       }
     }
+
+    &__hand-animation {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      z-index: 999;
+      bottom: 33px;
+      left: 230px;
+    
+      @media screen and (min-width: $tablet-width) {
+        width: 180px;
+        height: 180px;
+        bottom: 15%;
+        left: 65%;
+      }
+    
+      @media screen and (min-width: 750px) {
+        bottom: 16%;
+        left: 68%;
+      }
+    
+      @media screen and (min-width: $desktop-width) {
+        bottom: 20%;
+        left: 70%;
+      }
+    
+      @media screen and (min-width: 1920px) {
+        bottom: 27%;
+        left: 78%
+      }
+    
+    }
 }
+
+
+
 
 
