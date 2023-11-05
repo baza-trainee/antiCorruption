@@ -23,6 +23,8 @@ const Corruption = ({
   children,
 }) => {
   const [imageRevealFraq, setImageRevealFraq] = useState(0.97);
+  const [visibleElement, setVisibleElement] = useState(true);
+
   const imageContainer = useRef(undefined);
 
   const isMobilePosition = useMediaQuery({ maxWidth: 679 });
@@ -50,6 +52,7 @@ const Corruption = ({
   const slide = (xPosition) => {
     const containerBoundingRect =
       imageContainer.current.getBoundingClientRect();
+
     const slider =
       (xPosition - containerBoundingRect.left) / containerBoundingRect.width;
     setImageRevealFraq(() => {
@@ -71,16 +74,19 @@ const Corruption = ({
 
   const handleMouseMove = (e) => {
     slide(e.clientX);
+    setVisibleElement(false);
   };
 
   const handleTouchMove = (e) => {
     slide(e.touches.item(0).clientX);
+    setVisibleElement(false);
   };
 
   const handleMouseUp = () => {
     window.onmousemove = undefined;
     window.onmouseup = undefined;
   };
+
   return (
     <li ref={imageContainer} className='corruption-case__item'>
       <div
@@ -187,7 +193,7 @@ const Corruption = ({
           </div>
         </div>
       </div>
-      {children}
+      {visibleElement && children}
     </li>
   );
 };
