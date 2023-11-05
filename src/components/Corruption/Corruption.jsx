@@ -52,6 +52,7 @@ const Corruption = ({
   const slide = (xPosition) => {
     const containerBoundingRect =
       imageContainer.current.getBoundingClientRect();
+
     const slider =
       (xPosition - containerBoundingRect.left) / containerBoundingRect.width;
     setImageRevealFraq(() => {
@@ -85,6 +86,7 @@ const Corruption = ({
     window.onmousemove = undefined;
     window.onmouseup = undefined;
   };
+
   return (
     <li ref={imageContainer} className='corruption-case__item'>
       <div

@@ -50,6 +50,7 @@ const CorruptionContainer = () => {
       </Corruption>
     )
   );
+
   return (
     <section id='home'>
       <div className='corruption-case'>
