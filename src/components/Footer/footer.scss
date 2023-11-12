@@ -1,0 +1,214 @@
+@import '../../styles/styles.scss';
+
+.footer {
+  display: grid;
+  justify-content: center;
+  background-color: $secondary-color;
+  color: $white;
+
+  &__container {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 40px;
+    padding: 24px 16px;
+
+    @media (min-width: $tablet-width) {
+      justify-items: start;
+      gap: 22px;
+      padding: 22px 32px;
+    }
+
+    @media (min-width: $mobile-g-width) {
+      gap: 17px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: $desktop-width;
+      gap: 40px;
+      padding: 22px 0px;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    align-items: center;
+    grid-template-areas: 'logo btn btn' 'links links contacts';
+    column-gap: 9px;
+    row-gap: 40px;
+
+    @media (min-width: $tablet-width) {
+      grid-template-areas: 'logo contacts' 'btn links';
+      justify-content: space-between;
+      row-gap: 45px;
+      width: calc(100vw - 64px);
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-template-areas: 'logo btn contacts links';
+      column-gap: 94px;
+      row-gap: 0px;
+      padding: 51px 0;
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    width: 88px;
+    height: 40px;
+
+    @media (min-width: $tablet-width) {
+      align-self: flex-start;
+      width: 142px;
+      height: 64px;
+    }
+    
+    @media (min-width: $desktop-width) {
+      align-self: center;
+      width: 196px;
+      height: 88px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__btn {
+    grid-area: btn;
+    justify-self: flex-end;
+    font-family: $font-secondary;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 5px;
+    padding: 16px 32px;
+    cursor: pointer;
+
+    @media (min-width: $tablet-width) {
+      align-self: flex-start;
+      margin-top: -1rem;
+    }
+
+    @media (min-width: $desktop-width) {
+      align-self: center;
+      font-size: 20px;
+      margin-top: 0px;
+      padding: 24px 32px;
+    }
+
+    &:hover {
+      background: $button-hover-color;
+      box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
+      transition: background 0.3s;
+    }
+
+    &:active,
+    &:focus {
+      background: $tertiary;
+      box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    gap: 12px;
+    font-weight: 500;
+    line-height: normal;
+
+    @media (min-width: $tablet-width) {
+      font-size: 12px;
+      gap: 13px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+      gap: 16px;
+    }
+  }
+
+  &__contacts {
+    grid-area: contacts;
+
+    @media (min-width: $tablet-width) {
+      align-items: flex-start;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+    }
+  }
+
+  &__contact {
+    position: relative;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: -100px;
+    left: 5px;
+    font-family: $font-secondary;
+    font-size: 20px;
+    text-align: center;
+    color: $text;
+    background: $grey;
+    border-radius: 5px;
+    width: 290px;
+    padding: 20px;
+    z-index: 22;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  &__links {
+    grid-area: links;
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+    }
+  }
+
+  &__link {
+    button {
+      font-size: inherit;
+      color: inherit;
+      font-family: inherit;
+      text-decoration: underline;
+      text-align: start;
+      cursor: pointer;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.2px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 12px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+    }
+
+    &-symbol {
+      margin: 0 8px;
+    }
+  }
+}

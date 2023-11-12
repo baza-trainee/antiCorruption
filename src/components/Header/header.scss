@@ -1,0 +1,93 @@
+@import "/src/styles/styles.scss";
+.header {
+  &-container {
+    padding: 16px;
+    align-items: center;
+    @media (min-width: $tablet-width) {
+      padding: 24px 32px;
+      justify-content: space-between;
+    }
+    @media (min-width: $desktop-width) {
+      padding: 8px 150px;
+    }
+    &__logo {
+      justify-self: start;
+      grid-column: 1;
+      width: 126px;
+      height: 57px;
+      @media (min-width: $max-width-mobile) {
+        width: 142px;
+        height: 64px;
+      }
+      @media (min-width: $tablet-width) {
+        grid-column: 1 / span 2;
+      }
+      @media (min-width: $desktop-width) {
+      }
+      &-img {
+        width: 126px;
+        @media (min-width: $max-width-mobile) {
+          width: 142px;
+        }
+      }
+    }
+    &__nav {
+      display: none;
+      @media (min-width: $desktop-width) {
+        justify-self: end;
+        display: block;
+        grid-column: 5 / span 5;
+      }
+      &-list {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 40px;
+        &-item {
+          width: auto;
+          &-link {
+            font-size: $s;
+            font-weight: 500;
+            color: $text;
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          &-link:visited {
+            color: $text;
+          }
+          &-link:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    &__button {
+      display: none;
+      @media (min-width: $desktop-width) {
+        grid-column: 10 / span 3;
+        justify-self: end;
+        display: unset;
+        font-size: $s;
+        font-weight: 400;
+        line-height: normal;
+        width: 204px;
+        height: 40px;
+        background-color: $primary-color;
+        color: $white;
+        border-radius: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+    &__button:hover {
+      background-color: #142d45;
+      box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
+    }
+    &__button:focus {
+      background-color: $tertiary;
+      box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
+    }
+  }
+}

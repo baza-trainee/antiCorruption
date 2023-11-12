@@ -1,0 +1,66 @@
+@import '../../styles/styles.scss';
+
+body.pdf-modal-open {
+  overflow: hidden;
+}
+
+.pdf {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  &__modal {
+    height: 100vh;
+    background-color: $white;
+    padding: 15px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar-thumb {
+      background: $middle-grey;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $dark-grey;
+      border-radius: 3px;
+    }
+  }
+
+  &__button {
+    &_close {
+      width: 25px;
+      height: 25px;
+      align-self: flex-end;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.react-pdf__Page {
+  margin-top: 10px;
+}
+
+.react-pdf__Page__textContent {
+  border: 1px solid $dark-grey;
+  box-shadow: 4px 4px 5px 1px $middle-grey;
+}
