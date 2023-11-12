@@ -30,19 +30,24 @@
       flex-direction: column;
       justify-content: center;
       margin: 0 auto;
-      padding: 0 $s;
-    
-   @media screen and (min-width: $tablet-width) {
-      padding: 0 $lg;
-}
+      padding: 0 $md;
 
-    @media screen and (min-width: $desktop-width) {
+      @media screen and (min-width: 410px){
+        padding: 0 $s;
+      }
+    
+      @media screen and (min-width: $tablet-width) {
+      padding: 0 $lg;
+      }
+
+      @media screen and (min-width: $desktop-width) {
       max-width: $desktop-width;
       padding: 0 150px;    
-    }
-    @media screen and (min-width:1920px){
+      }
+   
+      @media screen and (min-width:1920px){
       max-width: $max-width-desktop;
-    }
+      }
   }
     
 
