@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import burgerOpen from "../../assets/burgerMenu/burgerOpen.svg";
 import burgerClose from "../../assets/burgerMenu/burgerClose.svg";
 import "./burgerMenu.scss";
@@ -12,7 +12,18 @@ const BurgerMenu = () => {
   const toggleCloseMenu = () => {
     setIsOpen(false);
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0 && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
 
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
   return (
     <nav className={`burger-menu ${isOpen ? "open" : ""}`}>
       <button className="burger-menu__button" onClick={toggleMenu}>
