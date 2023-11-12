@@ -91,12 +91,19 @@
 
     &__hand-animation {
       position: absolute;
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       z-index: 999;
-      bottom: 33px;
-      left: 230px;
+      bottom: 17%;
+      left: 63%;
     
+      @media screen and (min-width: $mobile-width) {
+        width: 100px;
+        height: 100px;
+        bottom: 12%;
+        left: 63%;
+      }
+
       @media screen and (min-width: $tablet-width) {
         width: 180px;
         height: 180px;

@@ -188,7 +188,7 @@
 
   &__circle {
     position: absolute;
-    bottom: 32%;
+    bottom: 33%;
     height: $md;
 
     display: flex;
@@ -200,9 +200,12 @@
     border-radius: 50px;
     background-color: #d9d9d9;
 
+    @media screen and (min-width: $mobile-width) {
+      bottom: 31%;
+    }
+    
     @media screen and (min-width: $tablet-width) {
       bottom: 37%;
-
     }
 
     @media screen and (min-width: $desktop-width) {
