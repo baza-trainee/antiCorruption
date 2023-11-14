@@ -30,19 +30,24 @@
       flex-direction: column;
       justify-content: center;
       margin: 0 auto;
-      padding: 0 $s;
-    
-   @media screen and (min-width: $tablet-width) {
-      padding: 0 $lg;
-}
+      padding: 0 $md;
 
-    @media screen and (min-width: $desktop-width) {
+      @media screen and (min-width: 410px){
+        padding: 0 $s;
+      }
+    
+      @media screen and (min-width: $tablet-width) {
+      padding: 0 $lg;
+      }
+
+      @media screen and (min-width: $desktop-width) {
       max-width: $desktop-width;
       padding: 0 150px;    
-    }
-    @media screen and (min-width:1920px){
+      }
+   
+      @media screen and (min-width:1920px){
       max-width: $max-width-desktop;
-    }
+      }
   }
     
 
@@ -91,12 +96,19 @@
 
     &__hand-animation {
       position: absolute;
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       z-index: 999;
-      bottom: 33px;
-      left: 230px;
+      bottom: 17%;
+      left: 63%;
     
+      @media screen and (min-width: $mobile-width) {
+        width: 100px;
+        height: 100px;
+        bottom: 12%;
+        left: 63%;
+      }
+
       @media screen and (min-width: $tablet-width) {
         width: 180px;
         height: 180px;

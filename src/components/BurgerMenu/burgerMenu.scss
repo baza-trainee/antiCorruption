@@ -15,6 +15,7 @@
       z-index: 9;
     }
   }
+
   @media (min-width: $tablet-width) {
     grid-column: 8;
   }
@@ -32,6 +33,7 @@
 .burger-menu__icon_close {
   width: 40px;
 }
+
 .burger-menu__icon_close {
   position: absolute;
   top: 41px;
@@ -64,6 +66,7 @@
   &__list {
     margin-bottom: 64px;
   }
+
   .menu-container__item {
     margin-bottom: 16px;
 

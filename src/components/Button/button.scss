@@ -1,0 +1,22 @@
+@import '../../styles/styles.scss';
+
+.button {
+  font-family: $font-secondary;
+  background-color: $primary-color;
+  color: $white;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: $button-hover-color;
+    box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
+    transition: background 0.3s;
+  }
+
+  &:active,
+  &:focus {
+    background: $tertiary;
+    box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
+  }
+}
