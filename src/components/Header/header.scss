@@ -61,6 +61,7 @@
     }
     &__button {
       display: none;
+
       @media (min-width: $desktop-width) {
         grid-column: 10 / span 3;
         justify-self: end;
@@ -70,24 +71,13 @@
         line-height: normal;
         width: 204px;
         height: 40px;
-        background-color: $primary-color;
-        color: $white;
-        border-radius: 5px;
         padding-top: 10px;
         padding-bottom: 10px;
         display: flex;
         justify-content: center;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-          box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
       }
-    }
-    &__button:hover {
-      background-color: #142d45;
-      box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
-    }
-    &__button:focus {
-      background-color: $tertiary;
-      box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
     }
   }
 }
