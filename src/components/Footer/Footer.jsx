@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { contacts, legalInformation } from '../../constants';
+import Button from '../Button/Button';
 import PdfViewer from '../PdfViewer/PdfViewer';
 import logo from '../../assets/logo.svg';
 import './footer.scss';
+
 
 const Footer = () => {
   const [copiedText, setCopiedText] = useState(null);
@@ -48,9 +50,7 @@ const Footer = () => {
               <img src={logo} alt="Logo" />
             </Link>
           </div>
-          <button className='footer__btn'>
-            Підтримати проєкт
-          </button>
+          <Button className='footer__btn' />
           <ul className='footer__contacts footer__list'>
             {contacts.map((item) => (
               <li

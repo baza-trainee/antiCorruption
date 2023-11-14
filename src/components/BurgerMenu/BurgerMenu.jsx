@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "../Button/Button";
 import burgerOpen from "../../assets/burgerMenu/burgerOpen.svg";
 import burgerClose from "../../assets/burgerMenu/burgerClose.svg";
 import "./burgerMenu.scss";
@@ -9,9 +10,11 @@ const BurgerMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const toggleCloseMenu = () => {
     setIsOpen(false);
   };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0 && isOpen) {
@@ -24,6 +27,7 @@ const BurgerMenu = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
+
   return (
     <nav className={`burger-menu ${isOpen ? "open" : ""}`}>
       <button className="burger-menu__button" onClick={toggleMenu}>
@@ -61,9 +65,7 @@ const BurgerMenu = () => {
             <hr />
           </li>
         </ul>
-        <a className="support-button" onClick={toggleCloseMenu}>
-          Підтримати проєкт
-        </a>
+        <Button className="support-button" onClick={toggleCloseMenu} />
       </div>
     </nav>
   );
