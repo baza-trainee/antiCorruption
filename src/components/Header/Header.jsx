@@ -1,8 +1,7 @@
-import React from "react";
 import "./header.scss";
-import burgerOpen from "../../assets/header/burger-menu.svg";
-import logoMain from "../../assets/header/logo-main.svg";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import Button from "../Button/Button";
+import logoMain from "../../assets/header/logo-main.svg";
 
 const Header = () => {
   return (
@@ -10,7 +9,6 @@ const Header = () => {
       <div className="grid-container header-container">
 
         <a className="header-container__logo" href="/">
-
           <img
             src={logoMain}
             alt="Logo"
@@ -38,9 +36,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="header-container__button" href="/">
-          Підтримати проєкт
-        </a>
+        <Button className="header-container__button" />
 
         <BurgerMenu />
       </div>

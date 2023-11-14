@@ -80,15 +80,9 @@
   &__btn {
     grid-area: btn;
     justify-self: flex-end;
-    font-family: $font-secondary;
     font-size: 16px;
     letter-spacing: 0.8px;
-    text-align: center;
-    background-color: $primary-color;
-    color: $white;
-    border-radius: 5px;
     padding: 16px 32px;
-    cursor: pointer;
 
     @media (min-width: $tablet-width) {
       align-self: flex-start;
@@ -100,18 +94,6 @@
       font-size: 20px;
       margin-top: 0px;
       padding: 24px 32px;
-    }
-
-    &:hover {
-      background: $button-hover-color;
-      box-shadow: 0px 10px 10px 0px rgba(49, 113, 172, 0.25);
-      transition: background 0.3s;
-    }
-
-    &:active,
-    &:focus {
-      background: $tertiary;
-      box-shadow: 0px 10px 10px 0px rgba(196, 216, 232, 0.25);
     }
   }
 
